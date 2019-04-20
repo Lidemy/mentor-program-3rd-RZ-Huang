@@ -20,4 +20,4 @@
 19. `git branch -d week1` 把一開始建立的 branch 給刪除。
 20. `git branch -v` 確認現有的 branch 的狀態。
 
-## 大功告成！
+### 大功告成！
