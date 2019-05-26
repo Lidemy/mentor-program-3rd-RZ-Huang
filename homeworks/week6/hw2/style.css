@@ -1,0 +1,71 @@
+/* initialize*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+#content {
+  width:80%;
+  margin: 40px auto;
+}
+
+.content__title {
+  font-size: 32px;
+  padding-bottom: 25px 
+}
+
+.clapArea {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+@media screen and (min-width: 900px) {
+  .content__title {
+    font-size: 42px;
+  }
+
+  #content > p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .clapArea {
+    display: block;
+    position: fixed;
+    top: 180px;
+    left: 30px;
+    height: 60px;
+    width: 60px;
+    border: 1px solid #ADADAD;
+    padding: 20px;
+    border-radius: 50%;
+    
+
+  }
+  .clap-number {
+    position: absolute;
+    top: 10px;
+    left: 18px;
+  }
+
+  .clap-icon {
+    position: absolute;
+    top: 28px;
+    left: 18px;
+
+  }
+   .clapArea:hover {
+     border-color: #2F4F4F;
+     cursor: pointer;
+   }
+}
