@@ -1,0 +1,41 @@
+body { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: pink;
+  font-family: sans-serif;
+}
+
+p {
+  font-size: 15px;
+}
+
+.title {
+  display: inline-block;
+  text-align: left;
+  font-size: 50px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+#container {
+  margin: 100px 500px;
+ 
+  text-align: left;
+  
+}
+
+.message {
+  background: rgba(255,255,255,0.3);
+}
+
+.submit {
+  margin: 10px;
+  background: rgba(190, 50, 50, 0.3);
+}
+
+.message-itmes{
+  border: 2px solid grey;
+  padding: 10px;
+}

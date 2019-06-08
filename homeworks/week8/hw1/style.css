@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background: rgb(47, 255, 227);
+}
+
+p {
+  margin: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#container{
+  position: relative;
+  margin: 100px 400px;
+  text-align: center;
+}
+.sky-color {
+  background : rgb(10, 137, 223);
+}
+
+.thankyou-color{
+  background: black;
+  color: white;
+}
+
+.ticket-getting {
+  font-size: 25px;
+  position: absolute; 
+  width: 150px;
+  height: 60px;
+  border-radius: 5px;
+  top: 600px;
+  left: 45%;
+}
+
+.thank {
+  padding-top: 200px;
+
+  font-size: 60px;
+
+}
+
+.again-getting {
+  position: absolute;
+  top: 600px;
+  left: 45%;
+  width: 150px;
+  height: 60px;
+  border-radius: 5px;
+  font-size: 25px;
+}
