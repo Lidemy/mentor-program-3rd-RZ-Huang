@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  background: #e8e3e3;
+}
+
+a {
+  font-size: 14px;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  font-size: 20px;
+  text-align: center;
+}
+
+.container p {
+  font-size: 14px;
+}
+
+.title {
+  font-size: 60px;
+  border: 1px solid black;
+  display: inline-block;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+.register {
+  margin-left: 30px;
+  color:  black;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.logout {
+  position: fixed;
+  width: 80px;
+  right: 20px;
+  top: 20px;
+  font-size: 16px;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  background: #c97e7e;
+}
+
+.input-comment{
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+  border: 1px solid grey;
+}
+
+.name {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  width: 100px;
+  padding: 6px;
+  border-radius: 5px;
+  background: #c97e7e;
+  color: black;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.comments {
+  width: 600px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.comment {
+  padding: 10px;
+  border: 2px dotted grey;
+  position: relative;
+}
+
+.comments h1{
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.comments h2 {
+  font-size: 16px;
+}
+
+.comments p {
+  font-size: 14px;
+  color: #7f7f7f;
+}
+
+.comment ~.comment {
+  margin-top: 10px;
+}
+
+.edit-comment, .delete-comment {
+  color: #4b4646;
+  padding: 5px 5px 5px 0px;
+  font-size: 10px;
+}
+
+.createdTime-comment {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.pages {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.page {
+  font-size: 20px;
+  padding: 2px 5px;
+  margin: 5px;
+  border: 1px solid black;
+  color: black;
+}
+
+.page:hover {
+  color: white;
+  background: black;
+}
+
+.view-pages {
+  margin-left: 15px;
+  display: inline-block;
+  font-size: 15px;
+}
