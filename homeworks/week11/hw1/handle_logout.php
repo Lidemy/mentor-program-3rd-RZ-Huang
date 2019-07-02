@@ -1,8 +1,7 @@
 <?php
 
-  if(isset($_COOKIE["nickname"])) {
-    setcookie("nickname",'');
-    setcookie("id", '');
+  if(isset($_COOKIE["certificate"])) {
+    setcookie("certificate",'');
     header('Location: ./index.php');
   } 
 

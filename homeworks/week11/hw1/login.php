@@ -1,4 +1,21 @@
-<?php require_once('./conn.php'); ?>
+<?php 
+  require_once('./conn.php'); 
+  
+  $sqlCertificateUsername = "SELECT username FROM RZ_users_certificate WHERE id = '$_COOKIE[certificate]' ";
+  $resultCertificateUsername = $conn->query($sqlCertificateUsername);
+  $rowCertificateUsername = '';
+  if ($resultCertificateUsername->num_rows > 0) {
+    $rowCertificateUsername = $resultCertificateUsername->fetch_assoc()['username'];
+  }
+  
+  
+  $sqlNickname = "SELECT nickname FROM RZ_users WHERE username =  '$rowCertificateUsername' ";
+  $resultNickname = $conn->query($sqlNickname);
+  $rowNickname = '';
+  if ($resultNickname->num_rows > 0) {
+    $rowNickname = $resultNickname->fetch_assoc();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +36,7 @@
       <form method='POST' action="./handle_add.php">
         <div class="name">
           <?php 
-            echo "「" . $_COOKIE['nickname'] . "」 您好！請在下方留下您想要說的話" ;
+            echo "「" . $rowNickname['nickname'] . "」 您好！請在下方留下您想要說的話" ;
           ?>
         </div>
         <div class="text">
@@ -54,16 +71,15 @@
             echo "<div class='comment'>";
             echo "  <h1>$rowPageComments[name]</h1>";
             echo "  <h2>$rowPageComments[content]</h2>";
-            if($rowPageComments['name'] === $_COOKIE['nickname']) {
+            if($rowPageComments['name'] === $rowNickname['nickname']) {
               echo "  <a href='./edit.php?id=$rowPageComments[id]' class='edit-comment'>編輯</a>";
               echo "  <a href='./handle_delete.php?id=$rowPageComments[id]' class='delete-comment'>刪除</a>";
             }
             echo "  <p class='createdTime-comment'>$rowPageComments[created_at]</p>";
             echo "</div>";
           }
-        } else {
-          echo "failed";
         }
+
           echo "<div class='pages'>";
         for($i=1 ;$i <=$AllPages; $i++){
             echo "<a href='?page=$i' class='page'>" . $i . "</a>";         
@@ -73,6 +89,10 @@
         if (isset($_GET['page'])) {
           echo "<div class='view-pages'>";
           echo "第 " . $_GET['page'] . "/" . $AllPages . " 頁";
+          echo "</div>";
+        } else if($AllPages == 0) {
+          echo "<div class='view-pages'>";
+          echo "第 " . 0 . "/" . $AllPages . " 頁";
           echo "</div>";
         } else {
           echo "<div class='view-pages'>";

@@ -33,7 +33,6 @@
         $resultAllComments = $conn->query($sqlAllComments);
         $AllCommentsCount = $resultAllComments->num_rows;
         $AllPages = ceil($AllCommentsCount/20);
-
         $page = '';
         
         if(!isset($_GET['page'])) {
@@ -46,7 +45,6 @@
         $resultPageComments = $conn->query($sqlPageComments);
 
 
-
         if ($resultPageComments->num_rows > 0) {
           while($rowPageComments = $resultPageComments->fetch_assoc()) {
             echo "<div class='comment'>";
@@ -55,18 +53,21 @@
             echo "  <p class='createdTime-comment'>$rowPageComments[created_at]</p>";
             echo "</div>";
           }
-        } else {
-          echo "failed";
         }
+
           echo "<div class='pages'>";
         for($i=1 ;$i <=$AllPages; $i++){
-            echo "<a href='?page=$i' class='page'>" . $i . "</a>";         
+          echo "<a href='?page=$i' class='page'>" . $i . "</a>";         
         }
           echo "</div>";
 
         if (isset($_GET['page'])) {
           echo "<div class='view-pages'>";
           echo "第 " . $_GET['page'] . "/" . $AllPages . " 頁";
+          echo "</div>";
+        } else if($AllPages == 0) {
+          echo "<div class='view-pages'>";
+          echo "第 " . 0 . "/" . $AllPages . " 頁";
           echo "</div>";
         } else {
           echo "<div class='view-pages'>";
