@@ -7,6 +7,21 @@
     $row = $result->fetch_assoc();
   }
   
+
+  $sqlCertificateUsername = "SELECT username FROM RZ_users_certificate WHERE id = '$_COOKIE[certificate]' ";
+  $resultCertificateUsername = $conn->query($sqlCertificateUsername);
+  $rowCertificateUsername = '';
+  if ($resultCertificateUsername->num_rows > 0) {
+    $rowCertificateUsername = $resultCertificateUsername->fetch_assoc()['username'];
+  }
+  
+  
+  $sqlNickname = "SELECT nickname FROM RZ_users WHERE username =  '$rowCertificateUsername' ";
+  $resultNickname = $conn->query($sqlNickname);
+  $rowNickname = '';
+  if ($resultNickname->num_rows > 0) {
+    $rowNickname = $resultNickname->fetch_assoc();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +43,7 @@
       <form method='POST' action="./handle_edit.php">
         <div class="name">
           <?php 
-            echo "「" . $_COOKIE['nickname'] . "」 您好！請在下方更改您的留言" ;
+            echo "「" . $rowNickname['nickname'] . "」 您好！請在下方更改您的留言" ;
           ?>
         </div>
         <div class="text">
@@ -64,7 +79,7 @@
             echo "<div class='comment'>";
             echo "  <h1>$rowPageComments[name]</h1>";
             echo "  <h2>$rowPageComments[content]</h2>";
-            if($rowPageComments['name'] === $_COOKIE['nickname']) {
+            if($rowPageComments['name'] === $rowNickname['nickname']) {
               echo "  <a href='./edit.php?id=$rowPageComments[id]' class='edit-comment'>編輯</a>";
               echo "  <a href='./handle_delete.php?id=$rowPageComments[id]' class='delete-comment'>刪除</a>";
             }

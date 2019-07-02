@@ -15,15 +15,9 @@
   $sql = "SELECT * FROM RZ_users where username = '$username'";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
-  $nickname = $row['nickname'];
-  $id = $row['id'];
   $passwordHash = $row['password'];
   
-  
 
-  setcookie("nickname", $nickname, time()+3600*24);
-  setcookie("id", $id, time()+3600*24);
-  
   function getRandomString() {
     $certificateStr = '';
     $str = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+.";
@@ -34,28 +28,20 @@
     return $certificateStr;
   }
 
-  
+  $sqlGetCertificate = "SELECT id FROM RZ_users_certificate where username = '$username'";
+  $resultGetCertificate = $conn->query($sqlGetCertificate);
+  $rowGetCertificate = $resultGetCertificate->fetch_assoc();
 
   if($row && password_verify($password, $passwordHash)) {
-    $sql = "SELECT id FROM RZ_users_certificate where username = '$username'";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    if ($_COOKIE['certificate' . $username]) {
-      if ($_COOKIE['certificate' . $username] === $row['id']) {
-          header('Location: ./login.php');
-      } else {
-        echo "Error Id";
-      }
-    } else if ($row) {
-      setcookie("certificate" . $username,$row['id']);
-      header('Location: ./login.php');
+    if($resultGetCertificate->num_rows > 0) {
+      setcookie("certificate", $rowGetCertificate['id'], time()+3600*24);
     } else {
       $certificateID = getRandomString();
-      setcookie("certificate" . $username,$certificateID);
-      $sql = "INSERT INTO RZ_users_certificate(id,username) VALUES('$certificateID', '$username')";
-      $result = $conn->query($sql);
-      header('Location: ./login.php');
+      $sqlCreateCertificate = "INSERT INTO RZ_users_certificate(id,username) VALUES('$certificateID', '$username')";
+      $result = $conn->query($sqlCreateCertificate);
+      setcookie("certificate", $certificateID, time()+3600*24);
     }
+    header('Location: ./login.php');
   } else {
     echo "Login Failed";
 ?>
