@@ -1,0 +1,140 @@
+$formPaddingLeft: 18px
+$inputFullWidth: 100%
+$backgroundRatio: 85% 
+$backgroundWidth: 100%
+$lightFontWeight: 100
+
+
+@mixin inputBorderStyle($px,$shape,$color)
+  border: none
+  outline: none
+  border-bottom: $px $shape $color
+
+
+* 
+  box-sizing: border-box
+
+body
+  height: 100%
+  width: 100%
+  margin: 0px
+  padding: 0px
+  font-size: 14px
+
+h3
+  font-size: 20px
+  margin: 0px
+  margin-bottom: 30px
+
+
+input 
+  @include inputBorderStyle(1px, solid, grey)
+  &[placeholder]
+    font-size: 16px
+    padding-bottom: 3px
+  &[type=email],&[type=text]
+    width: $inputFullWidth/2
+    background-color: rgba(255,255,255,0)
+  &[type=submit]
+    padding: 10px 30px
+    border-radius: 4px
+    background-color: rgb(26, 155, 233)
+    color: white
+    &:hover
+      background-color: #208af7
+      cursor: pointer
+
+
+/* Background 的部份 */
+.BG 
+  width: $backgroundWidth
+  height: 2000px
+  display: flex
+  flex-flow: column nowrap
+  &-image
+    flex-basis: 100% - $backgroundRatio
+    background-color: rgb(160, 150, 150)
+  &-color
+    flex-basis: $backgroundRatio
+    background-color: rgb(209, 192, 218)
+
+
+.container 
+  background-color: white
+  width: $backgroundWidth*0.35
+  position: absolute
+  top: 200px
+  left: 50%
+  transform: translate(-50%)
+
+  
+/* 表單最上面的橘槓 */
+.top-block 
+  background-color: rgb(255, 138, 76)
+  height: 8px
+  width: 100%
+
+/* 整個表單的外框邊界 */
+.form-block 
+  margin: $formPaddingLeft
+  margin-top: 40px
+
+/* 表單之間的間距 */
+.items-container 
+  padding: 18px
+  margin-bottom: 5px
+
+.others 
+  margin-bottom: 40px
+  &>input[type=text]
+    width: $inputFullWidth
+
+.submit 
+  padding-left: $formPaddingLeft
+  margin-bottom: 25px
+
+
+/* 表單最上方說明文字 */
+.info
+  line-height: 14px
+  margin: $formPaddingLeft
+  &>h1
+    font-size: 34px
+    padding-bottom: 16px
+  &-note
+    color: red
+    font-size: 13px
+
+
+/* 必填欄位的星星 */
+.star 
+  color: red
+
+
+/* 項目的備註 */
+.note 
+  font-size: 14px
+  font-weight: $lightFontWeight
+
+
+/* radio 的項目 */
+label[for] 
+  font-size: 16px
+
+.how-to-know > input[type=text],
+.CS-backgound > input[type=text]
+  width: $inputFullWidth
+
+.hint 
+  padding-left: $formPaddingLeft
+  color: grey
+  font-size: 12px
+
+/* 動態產生的地方 */
+.red 
+  background-color: #fce8e6
+
+.invalidHint 
+  color: red
+  font-weight: $lightFontWeight
+  font-size: 16px
