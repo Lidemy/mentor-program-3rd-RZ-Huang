@@ -4,7 +4,7 @@ module.exports = {
     es6: true,
     node: true,
     jest: true,
-    jquery: true
+    jquery: true,
   },
   extends: 'airbnb',
   globals: {
