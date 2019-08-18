@@ -1,0 +1,46 @@
+body {
+  text-decoration: none;
+}
+
+span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 210px;
+}
+
+ul {
+  padding: 5px;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+header, main {
+  margin-left: 10px;
+}
+
+.create-item {
+  margin-top: 10px;
+}
+
+.add-btn {
+  margin: 10px;
+}
+
+.delete-btn {
+  border-radius: 6px;
+  background-color: #ff7f76;
+  color: black;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.checked {
+  color: #ccc;
+  text-decoration: line-through;
+  font-style: italic;
+}
