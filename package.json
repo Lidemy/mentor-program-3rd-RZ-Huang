@@ -28,13 +28,14 @@
   },
   "homepage": "https://github.com/aszx87410/program-3rd#readme",
   "dependencies": {
+    "@babel/preset-react": "^7.0.0",
     "eslint": "^5.15.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "request": "^2.88.0",
     "yarn": "^1.17.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -50,8 +51,6 @@
     "husky": "^1.3.1",
     "jest": "^24.7.1",
     "lint-staged": "^8.1.5",
-    "node-sass": "^4.12.0",
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.6"
+    "node-sass": "^4.12.0"
   }
 }
