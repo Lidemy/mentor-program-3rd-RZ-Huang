@@ -21,7 +21,13 @@ module.exports = {
     'react',
   ],
   rules: {
+    "arrow-parens": ["error", "always"],
     "no-console": "off",
     'linebreak-style': ["error", "windows"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/extensions": ["error", "ignorePackages"],
+    "react/prop-types": [0],
+    "react/no-array-index-key": [0],
+    "react/no-multi-comp": [1, { "ignoreStateless": true }]
   },
 };
