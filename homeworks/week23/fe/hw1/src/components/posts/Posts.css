@@ -1,0 +1,41 @@
+.posts {
+  font-size: 14px;
+  text-align: center;
+}
+
+.posts-area {
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.posts-title {
+  width: 100%;
+  font-size: 18px;
+  padding: 10px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid grey;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  background-color: #f5f5f5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-transition: all .3s linear ;
+  -moz-transition: all .3s linear ;
+  -ms-transition: all .3s linear ;
+  -o-transition: all .3s linear ;
+  transition: all .3s linear ;
+}
+
+ .posts-title:hover {
+  background-color: #2d3436;
+  color: white;
+  border-radius: 5px;
+  transform: translate(-4px,-4px);
+ }
+ 
+button {
+  border: none;
+  background-color: #fff;
+}
