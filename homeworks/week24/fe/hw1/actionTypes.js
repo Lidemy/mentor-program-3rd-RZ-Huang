@@ -1,0 +1,13 @@
+export const HANDLE_NAV_PAGE = 'HANDLE_NAV_PAGE';
+
+export const GET_POST_LIST = 'GET_POST_LIST';
+
+export const GET_LIMITED_POST_LIST = 'GET_LIMITED_POST_LIST';
+
+export const GET_SINGLE_POST = 'GET_SINGLE_POST';
+
+export const DELETE_SINGLE_POST = 'DELETE_SINGLE_POST';
+
+export const UPDATE_SINGLE_POST = 'UPDATE_SINGLE_POST';
+
+export const ADD_NEW_POST = 'ADD_NEW_POST';
